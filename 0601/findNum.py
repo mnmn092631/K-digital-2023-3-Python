@@ -11,4 +11,4 @@ for i in range(1, 5 + 1):
     elif findNum < inNum:
         print(f"{inNum}보다 작은 숫자입니다.")
     else:
-        print(f"{inNum}보다 큰 숫자 입니다.")
+        print(f"{inNum}보다 큰 숫자입니다.")
