@@ -22,26 +22,19 @@ h = int(input("현재 시를 입력해주세요(1~12): "))
 sel = input("오전 오후를 선택해주세요(1. am | 2. pm): ")
 elap = int(input("경과 시간을 입력해주세요: "))
 
-now = (h + elap) % 12
+if sel == "2":
+    h += 12
 
-if now == 0:
-    now = 12
+now = (h + elap) % 24
 
-if (h + elap) // 12 % 2 == 1:
-    if sel == "1":
-        sel = "pm"
-    else: sel = "pm"
+if now < 12:
+    if now == 0:
+        now = 12
+    sel = "pm"
+else:
+    now -= 12
+    if now == 0:
+        now = 12
+    sel = "am"
 
 print(f"{now} {sel}")
-
-# if now > 12:
-#     now %= 12
-#     if sel == "1":
-#         print(f"{now} pm")
-#     elif sel == "2":
-#         print(f"{now} am")
-# else:
-#     if sel == "1":
-#         print(f"{now} am")
-#     elif sel == "2":
-#         print(f"{now} pm")
